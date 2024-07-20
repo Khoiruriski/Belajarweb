@@ -247,4 +247,8 @@ img1
 img1.remove() //Setelah dibuat variabelnya maka hapus saja 
 
 
-// 11. Latihan memanggil pokemon dengan DOM
+
+
+
+// EVENT (Menindak lanjuti inputan atau perintah yang dilakukan oleh pengguna)
+// Berfungsi untuk membuat website interaktif

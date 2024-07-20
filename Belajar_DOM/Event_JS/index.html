@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan Event</title>
+    <link rel="stylesheet" href="app.css">
+</head>
+
+<body>
+    <h1>Belajar Event Click !</h1>
+    <!-- Menggunakan inline (ujicoba event double click) -->
+    <button ondblclick="alert('Kamu sudah mengklik saya')">Anounce Double click</button> 
+    <!-- Menggunakan properti DOM pada app.js dengan id -->
+    <button id="clickme">Sensitive Click</button>
+    <!-- Menggunakan event dengan fungsi Addeventlistener -->
+     <button id="eventbtn">Event Listener Button</button> <br><br>
+     <!-- Belajar menggunakan Event Keyboard -->
+     <h1>Belajar Event Keyboard</h1>
+     <button id ='keyboardEvent'>Click Object</button>
+     <label for="inputText">Masukkan Inputan Keyboard</label>
+     <input type="text" id="inputText" name="inputText"/><br><br>
+
+     <!-- Belajar Prevent Default -->
+     <h1>Form</h1>
+     <form id=form action="/destination">
+        <input type="text" id="input" name="note" placeholder="Add a note"/>
+        <button type="submit">Add Note</button>
+     </form>
+     <!-- <a href="https://www.google.com/">Link Google</a><br> -->
+     <!-- Membuat Notes -->
+     <h2>Notes </h2>
+     <ul id="notes "></ul>
+
+    <!-- Belajar Event Bubbling -->
+    <h1>Event Bubbling</h1>
+    <!-- <section onclick="alert('Section Click')">
+        <p onclick="alert('paragraph click')">
+            <button onclick="alert('Button Click')">Click</button>
+        </p>
+    </section> -->
+
+    <div id="container">
+        >>click here to hide
+        <button id="changeColor">changeColor</button>
+    </div>
+    <!-- Menautkan source javascript -->
+    <script src="app.js">
+        const form = document.querySelector('#form')
+        const input1 = document.querySelector('#input');
+        const list = document.querySelector('#notes');
+
+        form.addEventListener('submit', function(event){
+            event.preventDefault();
+            const noteValue = input1.value;
+            const newList = document.createElement('li');
+            newList.innerText = noteValue;
+            list.append(newList)
+            input1.value = '';
+        })
+    </script>
+</body>
+</html>
